@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 加载数据源属性文件 -->
+	<properties resource="database.properties"></properties>
+
+	<!-- 配置日志文件输出 -->
+	<!-- <settings> <setting name="logImpl" value="LOG4J"></setting> </settings> -->
+
+	<!-- 设置类别名，简化文本 -->
+	<!-- <typeAliases> <typeAlias alias="SimpleAOP" type="com.ryunosuke.ssm.aop.SimpleAOP" 
+		/> </typeAliases> -->
+
+	<!-- 环境配置 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 资源文件路径配置 -->
+	<mappers>
+	    <!-- 有多种配置方式，此方法不要求xml文件与java文件在同一个包下 -->
+		<mapper resource="team/ryunosuke/web/ssm_web_base/mapper/AccountsMapper.xml"/>
+	</mappers>
+
+
+</configuration>

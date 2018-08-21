@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration 
+PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<!-- 加载数据源属性文件 -->
+	<properties resource="database.properties"></properties>
+
+	<classPathEntry
+		location="d:\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
+	
+	<context id="context1" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+			<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		</commentGenerator>
+		
+		<jdbcConnection driverClass="${driver}" connectionURL="${url}"
+			userId="${username}" password="${password}" />
+		
+		<!-- 生成位置 -->
+		<javaModelGenerator targetPackage="team.ryunosuke.web.ssm_web_base.entity"
+			targetProject="src/main/java" />
+		<sqlMapGenerator targetPackage="team.ryunosuke.web.ssm_web_base.mapper"
+			targetProject="src/main/java" />
+		<javaClientGenerator targetPackage="team.ryunosuke.web.ssm_web_base.dao"
+			targetProject="src/main/java" type="XMLMAPPER" />
+		
+		<!-- 数据库表声明,修改前两项 -->
+		<table schema="maven_test" tableName="accounts" domainObjectName="Accounts" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+	</context>
+</generatorConfiguration>
