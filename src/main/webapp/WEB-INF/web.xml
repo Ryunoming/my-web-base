@@ -9,7 +9,7 @@
     
     <!-- 设置首页 -->
     <welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
     
     <!-- 项目编码过滤器，统一为UTF-8 -->
